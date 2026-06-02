@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepurposAI | Transform Long-Form Content Instantly</title>
+    <meta name="description" content="AI-powered tool that automatically converts long-form articles and videos into highly engaging social media posts, newsletters, and summaries.">
+
+    <!-- Secure Web: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; script-src 'self';">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- ─── HEADER ─── -->
+    <header class="glass-header">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-text">Repurpos<span class="highlight">AI</span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <button class="btn btn-primary nav-cta" id="loginBtn">Get Started</button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ─── HERO ─── -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">✨ AI-Powered Micro-SaaS</span>
+                <h1 id="hero-title">One Article. <br><span class="gradient-text">A Month of Content.</span></h1>
+                <p class="subtitle">Turn your long-form videos and blog posts into viral Twitter threads, LinkedIn posts, and email sequences in seconds.</p>
+                <div class="hero-actions">
+                    <div class="input-group">
+                        <input type="url" id="contentUrl" placeholder="Paste your YouTube or Blog link here..." aria-label="Content URL">
+                        <button class="btn btn-glow" id="generateBtn">Generate Magic</button>
+                    </div>
+                    <!-- Progress bar -->
+                    <div class="progress-bar-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div id="statusMessage" class="status-message"></div>
+                </div>
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="12500">0</span>
+                        <span class="stat-label">Creators</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="1800000">0</span>
+                        <span class="stat-label">Posts Generated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="98">0</span>
+                        <span class="stat-label">% Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card mockup-card">
+                    <div class="mockup-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                        <span class="mockup-title">Output Preview</span>
+                    </div>
+                    <!-- Output Format Tabs -->
+                    <div class="output-tabs" id="outputTabs">
+                        <button class="tab-btn active" data-format="thread">🧵 Thread</button>
+                        <button class="tab-btn" data-format="linkedin">💼 LinkedIn</button>
+                        <button class="tab-btn" data-format="newsletter">📧 Newsletter</button>
+                    </div>
+                    <div class="mockup-body" id="mockupBody">
+                        <!-- Dynamic content will be injected here via JS -->
+                        <div class="skeleton line short"></div>
+                        <div class="skeleton line"></div>
+                        <div class="skeleton line"></div>
+                        <div class="skeleton line half"></div>
+                    </div>
+                    <!-- Copy / Download buttons -->
+                    <div class="mockup-actions" id="mockupActions" style="display:none;">
+                        <button class="btn btn-small btn-outline" id="copyBtn">📋 Copy All</button>
+                        <button class="btn btn-small btn-outline" id="downloadBtn">⬇ Download .txt</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FEATURES ─── -->
+        <section id="features" class="features">
+            <h2>Why Creators Love Us</h2>
+            <div class="features-grid">
+                <div class="feature-card glass-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Instant Threads</h3>
+                    <p>Our AI analyzes the core message and generates a high-converting 10-part thread.</p>
+                </div>
+                <div class="feature-card glass-card fade-in delay-1">
+                    <div class="feature-icon">📧</div>
+                    <h3>Newsletter Ready</h3>
+                    <p>Automatically summarize 1-hour videos into a structured 5-minute read for your subscribers.</p>
+                </div>
+                <div class="feature-card glass-card fade-in delay-2">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure &amp; Private</h3>
+                    <p>Your content is processed securely with zero data retention and strict privacy controls.</p>
+                </div>
+                <div class="feature-card glass-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Multi-Platform</h3>
+                    <p>Generate content optimized for Twitter, LinkedIn, email newsletters, and Instagram captions in one click.</p>
+                </div>
+                <div class="feature-card glass-card fade-in delay-1">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Tone Matching</h3>
+                    <p>Our AI preserves your unique voice and tone across every generated piece of content.</p>
+                </div>
+                <div class="feature-card glass-card fade-in delay-2">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics Ready</h3>
+                    <p>Track which repurposed posts perform best and let the AI learn your audience preferences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── HOW IT WORKS ─── -->
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">Three simple steps to transform your content pipeline forever.</p>
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Paste Your Link</h3>
+                        <p>Drop any YouTube video, blog post, or podcast link into RepurposAI.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step fade-in delay-1">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>AI Extracts &amp; Generates</h3>
+                        <p>Our engine transcribes, summarizes, and reformats into multiple content pieces.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step fade-in delay-2">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Copy &amp; Publish</h3>
+                        <p>Review, customize, and publish across all your platforms in minutes, not hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PRICING ─── -->
+        <section id="pricing" class="pricing">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Start free. Upgrade when you're ready to scale.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card glass-card fade-in">
+                    <div class="pricing-badge">Free</div>
+                    <div class="price">$0<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>5 repurposes / month</li>
+                        <li>Twitter threads only</li>
+                        <li>Community support</li>
+                    </ul>
+                    <button class="btn btn-outline-full">Get Started</button>
+                </div>
+                <div class="pricing-card glass-card popular fade-in delay-1">
+                    <div class="pricing-badge popular-badge">Most Popular</div>
+                    <div class="price">$19<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>100 repurposes / month</li>
+                        <li>All output formats</li>
+                        <li>Tone customization</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn btn-glow full-width">Start Free Trial</button>
+                </div>
+                <div class="pricing-card glass-card fade-in delay-2">
+                    <div class="pricing-badge">Enterprise</div>
+                    <div class="price">$79<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>Unlimited repurposes</li>
+                        <li>API access</li>
+                        <li>Team collaboration</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <button class="btn btn-outline-full">Contact Sales</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── TESTIMONIALS ─── -->
+        <section class="testimonials">
+            <h2>What Creators Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card glass-card fade-in">
+                    <p class="testimonial-text">"I used to spend 4 hours distributing every blog post. RepurposAI cut that to 10 minutes. Game changer."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍💻</div>
+                        <div>
+                            <div class="author-name">Alex Rivera</div>
+                            <div class="author-role">Tech Blogger, 50k followers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card fade-in delay-1">
+                    <p class="testimonial-text">"The LinkedIn output is absurdly good. It nails my professional tone every single time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🏫</div>
+                        <div>
+                            <div class="author-name">Priya Sharma</div>
+                            <div class="author-role">Career Coach &amp; Author</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card fade-in delay-2">
+                    <p class="testimonial-text">"We pipe every podcast episode through this. Our newsletter engagement is up 40% since switching."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🎙️</div>
+                        <div>
+                            <div class="author-name">Marcus Lee</div>
+                            <div class="author-role">Podcast Host, The Growth Lab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CTA ─── -->
+        <section class="cta-section">
+            <div class="cta-box glass-card fade-in">
+                <h2>Ready to <span class="gradient-text">10x Your Reach?</span></h2>
+                <p>Join 12,500+ creators who stopped wasting time on distribution.</p>
+                <button class="btn btn-glow btn-large">Start Repurposing — It's Free</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">Repurpos<span class="highlight">AI</span></span>
+                <p>Transform long-form content into an entire content calendar.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#how-it-works">How it Works</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RepurposAI. Built for creators.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
