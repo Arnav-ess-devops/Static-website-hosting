@@ -1,0 +1,40 @@
+rules:
+  - id: suspicious-eval
+    pattern: eval(...)
+    message: Suspicious eval usage detected
+    severity: ERROR
+    languages:
+      - javascript
+      - typescript
+
+  - id: suspicious-function
+    pattern: new Function(...)
+    message: Suspicious Function constructor detected
+    severity: ERROR
+    languages:
+      - javascript
+      - typescript
+
+  - id: child-process-exec
+    pattern: exec(...)
+    message: Child process execution detected
+    severity: WARNING
+    languages:
+      - javascript
+      - typescript
+
+  - id: child-process-spawn
+    pattern: spawn(...)
+    message: Child process spawn detected
+    severity: WARNING
+    languages:
+      - javascript
+      - typescript
+
+  - id: base64-decode
+    pattern: Buffer.from(..., "base64")
+    message: Base64 decoding detected
+    severity: WARNING
+    languages:
+      - javascript
+      - typescript
