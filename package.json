@@ -1,0 +1,7 @@
+{
+  "name": "socket-test",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "node bootstrap.js"
+  }
+}
